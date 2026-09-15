@@ -1,0 +1,10 @@
+[
+  {"id":1,"name":"Mobile Legends 86 Diamonds","category":"Gaming","price":20000,"description":"Top up Mobile Legends cepat.","badge":"POPULAR","symbol":"ML"},
+  {"id":2,"name":"Free Fire 70 Diamonds","category":"Gaming","price":10000,"description":"Top up Free Fire.","badge":"BEST","symbol":"FF"},
+  {"id":3,"name":"TikTok Followers","category":"Sosial Media","price":1000,"description":"Tambah followers TikTok.","badge":"POPULAR","symbol":"TT"},
+  {"id":4,"name":"Instagram Followers","category":"Sosial Media","price":1000,"description":"Tambah followers Instagram.","badge":"","symbol":"IG"},
+  {"id":5,"name":"WhatsApp Bot Rental 1 Hari","category":"WhatsApp","price":1000,"description":"Sewa bot untuk grup WhatsApp.","badge":"NEW","symbol":"WA"},
+  {"id":6,"name":"WhatsApp Bot Rental 1 Bulan","category":"WhatsApp","price":8000,"description":"Rental bot satu bulan.","badge":"","symbol":"WA"},
+  {"id":7,"name":"Jasa Edit Video","category":"Jasa","price":5000,"description":"Edit video sesuai kebutuhan.","badge":"","symbol":"ED"},
+  {"id":8,"name":"Jasa Poster / Banner","category":"Jasa","price":5000,"description":"Desain poster dan banner.","badge":"","symbol":"DS"}
+]
