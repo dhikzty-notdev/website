@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Dappiwz Store — Digital Marketplace">
+<title>Dappiwz Store — Digital Marketplace</title>
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+
+<header class="header">
+  <a class="logo-link" href="#home">
+    <img src="assets/logo.png" alt="Dappiwz Store">
+  </a>
+  <nav class="desktop-nav">
+    <a href="#home">Beranda</a>
+    <a href="#products">Produk</a>
+    <a href="#categories">Kategori</a>
+    <a href="#promo">Promo</a>
+    <a href="#articles">Artikel</a>
+  </nav>
+  <div class="header-actions">
+    <button class="icon-btn" id="searchBtn" aria-label="Cari">⌕</button>
+    <button class="cart-btn" id="cartBtn">Keranjang <b id="cartCount">0</b></button>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Beranda</a><a href="#products">Produk</a><a href="#categories">Kategori</a>
+  <a href="#promo">Promo</a><a href="#articles">Artikel</a>
+</div>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span></span> DIGITAL MARKETPLACE</div>
+    <h1>Everything digital.<br><em>One place.</em></h1>
+    <p>Temukan kebutuhan gaming, sosial media, jasa digital, dan layanan lainnya dengan proses yang simpel.</p>
+    <div class="hero-buttons">
+      <a class="btn btn-light" href="#products">Mulai Belanja →</a>
+      <a class="btn btn-outline" href="#categories">Jelajahi Kategori</a>
+    </div>
+    <div class="trust-row">
+      <div><strong>01</strong><span>Fast Process</span></div>
+      <div><strong>02</strong><span>Secure Order</span></div>
+      <div><strong>03</strong><span>Support Admin</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="glow"></div>
+    <img src="assets/logo.png" alt="Dappiwz Store logo">
+    <div class="visual-caption"><span>EST. 2026</span><span>✦</span><span>TRUSTED DIGITAL STORE</span></div>
+  </div>
+</section>
+
+<section class="ticker"><div>✦ DAPPIWZ STORE</div><div>FAST · SAFE · TRUSTED</div><div>✦ DIGITAL MARKETPLACE</div><div>ORDER ANYTIME</div></section>
+
+<section class="search-section">
+  <div class="section-kicker">SEARCH / 01</div>
+  <h2>What are you looking for?</h2>
+  <div class="search-box">
+    <span>⌕</span><input id="searchInput" type="search" placeholder="Cari produk, game, layanan..."><kbd>ENTER</kbd>
+  </div>
+</section>
+
+<section class="section" id="categories">
+  <div class="section-title"><div><div class="section-kicker">EXPLORE / 02</div><h2>Kategori</h2></div><a href="#products">Lihat semua →</a></div>
+  <div class="category-grid">
+    <button class="category-card" data-category="Gaming"><span>01</span><strong>Gaming</strong><small>Top up & voucher game</small><i>↗</i></button>
+    <button class="category-card" data-category="Sosial Media"><span>02</span><strong>Sosial Media</strong><small>Followers, like & views</small><i>↗</i></button>
+    <button class="category-card" data-category="WhatsApp"><span>03</span><strong>WhatsApp</strong><small>Bot & layanan WhatsApp</small><i>↗</i></button>
+    <button class="category-card" data-category="Jasa"><span>04</span><strong>Jasa Digital</strong><small>Edit, desain & custom</small><i>↗</i></button>
+  </div>
+</section>
+
+<section class="section products-section" id="products">
+  <div class="section-title">
+    <div><div class="section-kicker">STORE / 03</div><h2>Produk populer</h2></div>
+    <div class="filter-row">
+      <button class="filter active" data-filter="Semua">Semua</button>
+      <button class="filter" data-filter="Gaming">Gaming</button>
+      <button class="filter" data-filter="Sosial Media">Sosmed</button>
+      <button class="filter" data-filter="WhatsApp">WhatsApp</button>
+      <button class="filter" data-filter="Jasa">Jasa</button>
+    </div>
+  </div>
+  <div class="product-grid" id="productGrid"></div>
+</section>
+
+<section class="promo-section" id="promo">
+  <div class="promo-copy">
+    <div class="section-kicker">LIMITED / 04</div>
+    <h2>Special deals.<br><em>For you.</em></h2>
+    <p>Dapatkan harga spesial untuk produk pilihan Dappiwz Store.</p>
+    <a class="btn btn-light" href="#products">Lihat Promo →</a>
+  </div>
+  <div class="promo-deal"><span>UP TO</span><strong>20%</strong><small>OFF</small><i>✦</i></div>
+</section>
+
+<section class="section services">
+  <div class="section-title"><div><div class="section-kicker">SERVICE / 05</div><h2>Need something custom?</h2></div></div>
+  <div class="service-list">
+    <a href="https://wa.me/6280000000000" target="_blank"><span>01</span><b>Jasa Editing</b><small>Foto · Video · Gaming</small><i>↗</i></a>
+    <a href="https://wa.me/6280000000000" target="_blank"><span>02</span><b>WhatsApp Bot</b><small>Rental · Setup · Custom</small><i>↗</i></a>
+    <a href="https://wa.me/6280000000000" target="_blank"><span>03</span><b>Design</b><small>Logo · Poster · Banner</small><i>↗</i></a>
+    <a href="https://wa.me/6280000000000" target="_blank"><span>04</span><b>Custom Request</b><small>Tell us what you need</small><i>↗</i></a>
+  </div>
+</section>
+
+<section class="how section">
+  <div class="section-title"><div><div class="section-kicker">PROCESS / 06</div><h2>Cara order</h2></div></div>
+  <div class="steps">
+    <div><b>01</b><strong>Pilih produk</strong><p>Temukan produk yang kamu butuhkan.</p></div>
+    <div><b>02</b><strong>Isi data</strong><p>Masukkan data tujuan dengan benar.</p></div>
+    <div><b>03</b><strong>Checkout</strong><p>Pilih metode pembayaran yang tersedia.</p></div>
+    <div><b>04</b><strong>Pesanan diproses</strong><p>Tunggu sampai transaksi selesai.</p></div>
+  </div>
+</section>
+
+<section class="why section">
+  <div class="why-intro"><div class="section-kicker">WHY US / 07</div><h2>Simple.<br>Reliable.<br><em>Trusted.</em></h2></div>
+  <div class="why-grid">
+    <div><span>✦</span><h3>Fast Response</h3><p>Admin siap membantu pertanyaan dan kendala order.</p></div>
+    <div><span>✦</span><h3>Secure Payment</h3><p>Detail pembayaran diberikan secara jelas saat checkout.</p></div>
+    <div><span>✦</span><h3>Easy Process</h3><p>Alur pembelian dibuat sesederhana mungkin.</p></div>
+    <div><span>✦</span><h3>Customer Support</h3><p>Hubungi admin jika membutuhkan bantuan.</p></div>
+  </div>
+</section>
+
+<section class="articles section" id="articles">
+  <div class="section-title"><div><div class="section-kicker">READ / 08</div><h2>Artikel terbaru</h2></div><a href="#">Semua artikel →</a></div>
+  <div class="article-grid">
+    <article><div class="article-no">01</div><h3>Cara order di Dappiwz Store</h3><p>Kenali langkah pembelian dari memilih produk sampai transaksi selesai.</p><a href="#">Baca artikel →</a></article>
+    <article><div class="article-no">02</div><h3>Tips aman membeli produk digital</h3><p>Beberapa hal yang perlu diperhatikan sebelum melakukan transaksi.</p><a href="#">Baca artikel →</a></article>
+    <article><div class="article-no">03</div><h3>Kenapa data order harus benar?</h3><p>Kesalahan data dapat memengaruhi proses pengiriman produk.</p><a href="#">Baca artikel →</a></article>
+  </div>
+</section>
+
+<section class="faq section">
+  <div><div class="section-kicker">HELP / 09</div><h2>Frequently asked.</h2></div>
+  <div class="faq-list">
+    <button class="faq-item"><span>Apa itu Dappiwz Store?</span><b>+</b><p>Dappiwz Store adalah digital marketplace untuk berbagai produk dan layanan digital.</p></button>
+    <button class="faq-item"><span>Bagaimana cara order?</span><b>+</b><p>Pilih produk, masukkan data yang diminta, masukkan ke keranjang lalu lanjutkan checkout.</p></button>
+    <button class="faq-item"><span>Bagaimana jika ada masalah?</span><b>+</b><p>Hubungi admin melalui WhatsApp dan sertakan nomor order serta bukti transaksi.</p></button>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="section-kicker">DAPPIWZ STORE / 10</div>
+  <h2>Ready to order?</h2>
+  <p>Semua kebutuhan digitalmu, satu tempat.</p>
+  <a class="btn btn-light" href="#products">Mulai Belanja →</a>
+</section>
+</main>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand"><img src="assets/logo.png" alt="Dappiwz Store"><p>Digital marketplace for your everyday needs.</p></div>
+    <div><h4>PRODUCT</h4><a href="#products">Semua Produk</a><a href="#categories">Gaming</a><a href="#categories">Sosial Media</a><a href="#categories">Jasa Digital</a></div>
+    <div><h4>HELP</h4><a href="#home">Cara Order</a><a href="#pembayaran">Pembayaran</a><a href="#articles">Artikel</a><a href="#articles">FAQ</a></div>
+    <div><h4>CONTACT</h4><a href="https://wa.me/6280000000000" target="_blank">WhatsApp</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> Dappiwz Store</span><span>soft · calm · mysterious</span><span>All rights reserved.</span></div>
+</footer>
+
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-head"><h3>Keranjang</h3><button id="closeCart">×</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-bottom"><div><span>Total</span><strong id="cartTotal">Rp0</strong></div><button class="checkout" id="checkoutBtn">Checkout →</button></div>
+</aside>
+<div class="overlay" id="overlay"></div>
+
+<div class="modal" id="productModal">
+  <div class="modal-box">
+    <button class="modal-close" data-close>×</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+</div>
+
+<div class="modal" id="checkoutModal">
+  <div class="modal-box checkout-box">
+    <button class="modal-close" data-close>×</button>
+    <div class="section-kicker">CHECKOUT</div><h2>Complete your order.</h2>
+    <form id="checkoutForm">
+      <label>Nama<input name="name" required placeholder="Nama kamu"></label>
+      <label>WhatsApp<input name="phone" required placeholder="628xxxxxxxxxx"></label>
+      <label>Catatan / data produk<textarea name="note" required placeholder="Masukkan User ID, server, atau data yang diperlukan"></textarea></label>
+      <label>Metode pembayaran<select name="payment"><option>QRIS</option><option>DANA</option><option>Transfer Bank</option></select></label>
+      <div class="checkout-total"><span>Total</span><strong id="checkoutTotal">Rp0</strong></div>
+      <button class="btn btn-light full" type="submit">Buat Pesanan →</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
