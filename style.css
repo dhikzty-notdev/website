@@ -149,6 +149,13 @@ button { font: inherit; }
   color: #c8e9f8;
   font-size: 14px;
 }
+.payment-note {
+  max-width: 620px;
+  margin: -14px auto 28px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
 
 
 
