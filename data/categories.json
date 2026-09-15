@@ -1,6 +1,8 @@
 [
-  {"id":"Gaming","number":"01","name":"Gaming","description":"Top up & voucher game"},
-  {"id":"Sosial Media","number":"02","name":"Sosial Media","description":"Followers, like & views"},
-  {"id":"WhatsApp","number":"03","name":"WhatsApp","description":"Bot & layanan WhatsApp"},
-  {"id":"Jasa","number":"04","name":"Jasa Digital","description":"Edit, desain & custom"}
+  {"id":"Gaming","name":"Gaming","description":"Topup game, WDP, Starlight ML, Robux, dll"},
+  {"id":"Aplikasi Premium","name":"Aplikasi Premium","description":"YouTube Premium, Netflix, Wink, Alight Motion, Canva, dll"},
+  {"id":"Sosial Media","name":"Sosial Media","description":"Suntik TikTok, Instagram, channel WhatsApp, dll"},
+  {"id":"Kebutuhan Hosting","name":"Kebutuhan Hosting","description":"Panel bot, sewa bot WA, script bot, dll"},
+  {"id":"Paid Edit","name":"Paid Edit","description":"Edit JJ, edit logo store/JB, edit poster OPMEM, dll"},
+  {"id":"Jasa Digital","name":"Jasa Digital","description":"Jasa HD SW, fix script bot error, install bot WA/Tele, dll"}
 ]
