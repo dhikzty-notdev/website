@@ -1,5 +1,5 @@
 const PRODUCTS=[];
-let SETTINGS={whatsapp:"6280000000000",storeName:"Dappiwz Store"};
+let SETTINGS={whatsapp:"6285178418341",storeName:"Dappiwz Store"};
 let CATEGORIES=[];
 let cart=JSON.parse(localStorage.getItem("dappiwz_cart")||"[]");
 let activeFilter="Semua";
@@ -14,7 +14,7 @@ async function loadStoreData(){
     PRODUCTS.splice(0,PRODUCTS.length,...products);
     CATEGORIES.splice(0,CATEGORIES.length,...categories);
     SETTINGS=settings;
-    document.querySelectorAll("a[href*='wa.me/6280000000000']").forEach(a=>a.href=a.href.replace("6280000000000",SETTINGS.whatsapp));
+    document.querySelectorAll("a[href*='wa.me/6285178418341']").forEach(a=>a.href=a.href.replace("6280000000000",SETTINGS.whatsapp));
     renderProducts(); renderCart();
   }catch(e){console.error("Gagal memuat data toko:",e); toast("Data toko gagal dimuat");}
 }
