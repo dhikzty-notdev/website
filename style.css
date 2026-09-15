@@ -85,3 +85,8 @@ footer{border-top:1px solid var(--line);padding:60px 28px 30px;max-width:1180px;
 .product-card .product-cat{letter-spacing:.12em}
 @media(max-width:850px){.category-grid{grid-template-columns:1fr 1fr}.product-image{height:190px}}
 @media(max-width:520px){.category-grid{grid-template-columns:1fr}.category-card{min-height:155px}.category-card strong{margin-top:35px}.product-image{height:180px}}
+
+/* === FINAL FIX: mobile navigation + reliable status === */
+.mobile-menu{z-index:35;box-shadow:0 12px 25px rgba(0,0,0,.35)}
+.mobile-menu.open{display:block}
+@media(min-width:851px){.mobile-menu{display:none!important}}
