@@ -4,6 +4,18 @@ let CATEGORIES=[];
 let cart=JSON.parse(localStorage.getItem("dappiwz_cart")||"[]");
 let activeFilter="Semua";
 
+function updateStoreStatus(){
+ const now=new Date();
+ const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Jakarta',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now);
+ const hour=Number(parts.find(x=>x.type==='hour').value);
+ const minute=Number(parts.find(x=>x.type==='minute').value);
+ const open=hour>=10 && (hour<23);
+ const el=document.getElementById('storeStatus');
+ if(!el)return;
+ el.textContent=open?'[OPEN]':'[CLOSE]';
+ el.classList.toggle('closed',!open);
+}
+
 async function loadStoreData(){
   try{
     const [products,categories,settings]=await Promise.all([
@@ -15,6 +27,14 @@ async function loadStoreData(){
     CATEGORIES.splice(0,CATEGORIES.length,...categories);
     SETTINGS=settings;
     document.querySelectorAll("a[href*='wa.me/6285178418341']").forEach(a=>a.href=a.href.replace("6285178418341",SETTINGS.whatsapp));
+
+    // Link navigasi diatur dari data/settings.json
+    const navTestimoni=document.getElementById("navTestimoni");
+    const navWhatsappGroup=document.getElementById("navWhatsappGroup");
+    const testiLink=document.getElementById("testiLink");
+    if(navTestimoni) navTestimoni.href=SETTINGS.testimonial || "#testimoni";
+    if(navWhatsappGroup) navWhatsappGroup.href=SETTINGS.whatsappGroup || "#";
+    if(testiLink) testiLink.href=SETTINGS.testimonial || "#testimoni";
     renderProducts(); renderCart();
   }catch(e){console.error("Gagal memuat data toko:",e); toast("Data toko gagal dimuat");}
 }
@@ -28,7 +48,7 @@ function renderProducts(){
  const list=PRODUCTS.filter(p=>(activeFilter==="Semua"||p.cat===activeFilter)&&(!q||`${p.name} ${p.cat} ${p.desc}`.toLowerCase().includes(q)));
  $("#productGrid").innerHTML=list.length?list.map(p=>`
  <article class="product-card">
-  <div class="product-image">${p.badge?`<span class="badge">${p.badge}</span>`:""}<span class="product-symbol">${p.symbol}</span></div>
+  <div class="product-image">${p.badge?`<span class="badge">${p.badge}</span>`:""}${p.image?`<img src="${p.image}" alt="${p.name}">`:`<span class="product-symbol">${p.symbol}</span>`}</div>
   <div class="product-info"><div class="product-cat">${p.cat}</div><h3>${p.name}</h3><p>${p.desc}</p>
   <div class="product-bottom"><span class="product-price">${rupiah(p.price)}</span><button class="product-buy" onclick="openProduct(${p.id})">DETAIL</button></div></div>
  </article>`).join(""):`<div class="empty">Produk tidak ditemukan.</div>`;
@@ -67,8 +87,10 @@ $("#searchInput").addEventListener("keydown",e=>{if(e.key==="Enter")$("#products
 $$(".filter").forEach(b=>b.onclick=()=>{$$(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");activeFilter=b.dataset.filter;renderProducts()});
 $$(".category-card").forEach(b=>b.onclick=()=>{activeFilter=b.dataset.category;$$(".filter").forEach(x=>x.classList.toggle("active",x.dataset.filter===activeFilter));$("#products").scrollIntoView({behavior:"smooth"});renderProducts()});
 $$(".faq-item").forEach(b=>b.onclick=()=>b.classList.toggle("open"));
-$("#menuBtn").onclick=()=>$("#mobileMenu").style.display=$("#mobileMenu").style.display==="block"?"none":"block";
-$$(".mobile-menu a").forEach(a=>a.onclick=()=>$("#mobileMenu").style.display="none");
+$("#menuBtn").onclick=()=>{const open=$("#mobileMenu").style.display==="block";$("#mobileMenu").style.display=open?"none":"block";$("#menuBtn").setAttribute('aria-expanded',String(!open));};
+$$('.mobile-menu a').forEach(a=>a.onclick=()=>{$('#mobileMenu').style.display='none';$('#menuBtn').setAttribute('aria-expanded','false')});
+updateStoreStatus();
+setInterval(updateStoreStatus,30000);
 
 $("#checkoutForm").onsubmit=e=>{
  e.preventDefault();
@@ -77,7 +99,7 @@ $("#checkoutForm").onsubmit=e=>{
  const lines=cart.map(x=>{const p=PRODUCTS.find(y=>y.id===x.id);return `${p.name} x${x.qty}`}).join("%0A");
  const total=rupiah(cart.reduce((a,x)=>a+PRODUCTS.find(p=>p.id===x.id).price*x.qty,0));
  const msg=`Halo Dappiwz Store,%0ASaya ingin order *${order}*%0A%0A${lines}%0A%0ATotal: ${total}%0ANama: ${encodeURIComponent(fd.get("name"))}%0AWhatsApp: ${encodeURIComponent(fd.get("phone"))}%0AData: ${encodeURIComponent(fd.get("note"))}%0APayment: ${encodeURIComponent(fd.get("payment"))}`;
- window.open(`https://wa.me/6285178418341?text=${msg}`,"_blank");
+ window.open(`https://wa.me/${SETTINGS.whatsapp}?text=${msg}`,"_blank");
  cart=[];saveCart();e.target.reset();closeModals();$("#cartDrawer").classList.remove("open");$("#overlay").classList.remove("show");toast("Pesanan dibuat. WhatsApp dibuka.");
 };
 $("#year").textContent=new Date().getFullYear();
