@@ -16,34 +16,35 @@
 <div id="toast" class="toast"></div>
 
 <header class="header">
-  <a class="logo-link" href="#home">
+  <a class="brand" href="#home" aria-label="Dappiwz Store">
     <img src="assets/logo.png" alt="Dappiwz Store">
+    <span>DAPPIWZ STORE</span>
   </a>
-  <nav class="desktop-nav">
-    <a href="#home">Beranda</a>
-    <a href="#products">Produk</a>
-    <a href="#categories">Kategori</a>
-    <a href="#promo">Promo</a>
-    <a href="#articles">Artikel</a>
-  </nav>
+  <div class="store-status" aria-live="polite">
+    <span class="store-hours">10.00 - 23.00 WIB</span>
+    <strong id="storeStatus">[OPEN]</strong>
+  </div>
   <div class="header-actions">
-    <button class="icon-btn" id="searchBtn" aria-label="Cari">⌕</button>
-    <button class="cart-btn" id="cartBtn">Keranjang <b id="cartCount">0</b></button>
-    <button class="menu-btn" id="menuBtn">☰</button>
+    <button class="cart-btn" id="cartBtn" aria-label="Keranjang">🛒 <b id="cartCount">0</b></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#home">Beranda</a><a href="#products">Produk</a><a href="#categories">Kategori</a>
-  <a href="#promo">Promo</a><a href="#articles">Artikel</a>
+  <a href="#home">01. Beranda</a>
+  <a href="#products">02. Produk Terlaris</a>
+  <a href="#categories">03. Kategori</a>
+  <a href="#" id="navTestimoni" target="_blank" rel="noopener">04. Testimoni</a>
+  <a href="#" id="navWhatsappGroup" target="_blank" rel="noopener">05. Group WhatsApp</a>
+  <a href="#faq">06. FAQ</a>
 </div>
 
 <main id="home">
 <section class="hero">
   <div class="hero-copy">
     <div class="eyebrow"><span></span> DIGITAL MARKETPLACE</div>
-    <h1>Everything digital.<br><em>One place.</em></h1>
-    <p>Temukan kebutuhan gaming, sosial media, jasa digital, dan layanan lainnya dengan proses yang simpel.</p>
+    <h1>Welcome to<br><em>Marketplace Dappiwz Store</em></h1>
+    <p>Temukan kebutuhan gaming, hosting, sosial media, paid edit, apk premium dan layanan lainnya dengan proses yang simpel.</p>
     <div class="hero-buttons">
       <a class="btn btn-light" href="#products">Mulai Belanja →</a>
       <a class="btn btn-outline" href="#categories">Jelajahi Kategori</a>
@@ -53,11 +54,6 @@
       <div><strong>02</strong><span>Secure Order</span></div>
       <div><strong>03</strong><span>Support Admin</span></div>
     </div>
-  </div>
-  <div class="hero-visual">
-    <div class="glow"></div>
-    <img src="assets/logo.png" alt="Dappiwz Store logo">
-    <div class="visual-caption"><span>EST. 2026</span><span>✦</span><span>TRUSTED DIGITAL STORE</span></div>
   </div>
 </section>
 
@@ -72,47 +68,31 @@
 </section>
 
 <section class="section" id="categories">
-  <div class="section-title"><div><div class="section-kicker">EXPLORE / 02</div><h2>Kategori</h2></div><a href="#products">Lihat semua →</a></div>
+  <div class="section-title"><div><div class="section-kicker">EXPLORE / 02</div><h2>Kategori</h2></div><a href="#products">Lihat produk →</a></div>
   <div class="category-grid">
-    <button class="category-card" data-category="Gaming"><span>01</span><strong>Gaming</strong><small>Top up & voucher game</small><i>↗</i></button>
-    <button class="category-card" data-category="Sosial Media"><span>02</span><strong>Sosial Media</strong><small>Followers, like & views</small><i>↗</i></button>
-    <button class="category-card" data-category="WhatsApp"><span>03</span><strong>WhatsApp</strong><small>Bot & layanan WhatsApp</small><i>↗</i></button>
-    <button class="category-card" data-category="Jasa"><span>04</span><strong>Jasa Digital</strong><small>Edit, desain & custom</small><i>↗</i></button>
+    <button class="category-card" data-category="Gaming"><strong>Gaming</strong><small>Topup game, WDP, Starlight ML, Robux, dll</small><i>↗</i></button>
+    <button class="category-card" data-category="Aplikasi Premium"><strong>Aplikasi Premium</strong><small>YouTube Premium, Netflix, Wink, Alight Motion, Canva, dll</small><i>↗</i></button>
+    <button class="category-card" data-category="Sosial Media"><strong>Sosial Media</strong><small>Suntik TikTok, Instagram, channel WhatsApp, dll</small><i>↗</i></button>
+    <button class="category-card" data-category="Kebutuhan Hosting"><strong>Kebutuhan Hosting</strong><small>Panel bot, sewa bot WA, script bot, dll</small><i>↗</i></button>
+    <button class="category-card" data-category="Paid Edit"><strong>Paid Edit</strong><small>Edit JJ, edit logo store/JB, edit poster OPMEM, dll</small><i>↗</i></button>
+    <button class="category-card" data-category="Jasa Digital"><strong>Jasa Digital</strong><small>Jasa HD SW, fix script bot error, install bot WA/Tele, dll</small><i>↗</i></button>
   </div>
 </section>
 
 <section class="section products-section" id="products">
   <div class="section-title">
-    <div><div class="section-kicker">STORE / 03</div><h2>Produk populer</h2></div>
+    <div><div class="section-kicker">STORE / 03</div><h2>Produk Dappiwz</h2></div>
     <div class="filter-row">
       <button class="filter active" data-filter="Semua">Semua</button>
       <button class="filter" data-filter="Gaming">Gaming</button>
-      <button class="filter" data-filter="Sosial Media">Sosmed</button>
-      <button class="filter" data-filter="WhatsApp">WhatsApp</button>
-      <button class="filter" data-filter="Jasa">Jasa</button>
+      <button class="filter" data-filter="Aplikasi Premium">Aplikasi Premium</button>
+      <button class="filter" data-filter="Sosial Media">Sosial Media</button>
+      <button class="filter" data-filter="Kebutuhan Hosting">Hosting</button>
+      <button class="filter" data-filter="Paid Edit">Paid Edit</button>
+      <button class="filter" data-filter="Jasa Digital">Jasa Digital</button>
     </div>
   </div>
   <div class="product-grid" id="productGrid"></div>
-</section>
-
-<section class="promo-section" id="promo">
-  <div class="promo-copy">
-    <div class="section-kicker">LIMITED / 04</div>
-    <h2>Special deals.<br><em>For you.</em></h2>
-    <p>Dapatkan harga spesial untuk produk pilihan Dappiwz Store.</p>
-    <a class="btn btn-light" href="#products">Lihat Promo →</a>
-  </div>
-  <div class="promo-deal"><span>UP TO</span><strong>20%</strong><small>OFF</small><i>✦</i></div>
-</section>
-
-<section class="section services">
-  <div class="section-title"><div><div class="section-kicker">SERVICE / 05</div><h2>Need something custom?</h2></div></div>
-  <div class="service-list">
-    <a href="https://wa.me/6280000000000" target="_blank"><span>01</span><b>Jasa Editing</b><small>Foto · Video · Gaming</small><i>↗</i></a>
-    <a href="https://wa.me/6280000000000" target="_blank"><span>02</span><b>WhatsApp Bot</b><small>Rental · Setup · Custom</small><i>↗</i></a>
-    <a href="https://wa.me/6280000000000" target="_blank"><span>03</span><b>Design</b><small>Logo · Poster · Banner</small><i>↗</i></a>
-    <a href="https://wa.me/6280000000000" target="_blank"><span>04</span><b>Custom Request</b><small>Tell us what you need</small><i>↗</i></a>
-  </div>
 </section>
 
 <section class="how section">
@@ -125,26 +105,12 @@
   </div>
 </section>
 
-<section class="why section">
-  <div class="why-intro"><div class="section-kicker">WHY US / 07</div><h2>Simple.<br>Reliable.<br><em>Trusted.</em></h2></div>
-  <div class="why-grid">
-    <div><span>✦</span><h3>Fast Response</h3><p>Admin siap membantu pertanyaan dan kendala order.</p></div>
-    <div><span>✦</span><h3>Secure Payment</h3><p>Detail pembayaran diberikan secara jelas saat checkout.</p></div>
-    <div><span>✦</span><h3>Easy Process</h3><p>Alur pembelian dibuat sesederhana mungkin.</p></div>
-    <div><span>✦</span><h3>Customer Support</h3><p>Hubungi admin jika membutuhkan bantuan.</p></div>
-  </div>
+<section class="section testimoni-section" id="testimoni">
+  <div class="section-title"><div><div class="section-kicker">PROOF / 08</div><h2>Testimoni</h2></div><a href="#" id="testiLink" target="_blank" rel="noopener">Lihat channel →</a></div>
+  <p class="testimoni-note">Lihat pengalaman dan testimoni pembeli di channel WhatsApp Dappiwz Store.</p>
 </section>
 
-<section class="articles section" id="articles">
-  <div class="section-title"><div><div class="section-kicker">READ / 08</div><h2>Artikel terbaru</h2></div><a href="#">Semua artikel →</a></div>
-  <div class="article-grid">
-    <article><div class="article-no">01</div><h3>Cara order di Dappiwz Store</h3><p>Kenali langkah pembelian dari memilih produk sampai transaksi selesai.</p><a href="#">Baca artikel →</a></article>
-    <article><div class="article-no">02</div><h3>Tips aman membeli produk digital</h3><p>Beberapa hal yang perlu diperhatikan sebelum melakukan transaksi.</p><a href="#">Baca artikel →</a></article>
-    <article><div class="article-no">03</div><h3>Kenapa data order harus benar?</h3><p>Kesalahan data dapat memengaruhi proses pengiriman produk.</p><a href="#">Baca artikel →</a></article>
-  </div>
-</section>
-
-<section class="faq section">
+<section class="faq section" id="faq">
   <div><div class="section-kicker">HELP / 09</div><h2>Frequently asked.</h2></div>
   <div class="faq-list">
     <button class="faq-item"><span>Apa itu Dappiwz Store?</span><b>+</b><p>Dappiwz Store adalah digital marketplace untuk berbagai produk dan layanan digital.</p></button>
@@ -164,9 +130,9 @@
 <footer>
   <div class="footer-main">
     <div class="footer-brand"><img src="assets/logo.png" alt="Dappiwz Store"><p>Digital marketplace for your everyday needs.</p></div>
-    <div><h4>PRODUCT</h4><a href="#products">Semua Produk</a><a href="#categories">Gaming</a><a href="#categories">Sosial Media</a><a href="#categories">Jasa Digital</a></div>
-    <div><h4>HELP</h4><a href="#home">Cara Order</a><a href="#pembayaran">Pembayaran</a><a href="#articles">Artikel</a><a href="#articles">FAQ</a></div>
-    <div><h4>CONTACT</h4><a href="https://wa.me/6280000000000" target="_blank">WhatsApp</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+    <div><h4>PRODUCT</h4><a href="#products">Semua Produk</a><a href="#categories">Gaming</a><a href="#categories">Aplikasi Premium</a><a href="#categories">Sosial Media</a><a href="#categories">Hosting</a><a href="#categories">Paid Edit</a><a href="#categories">Jasa Digital</a></div>
+    <div><h4>HELP</h4><a href="#home">Cara Order</a><a href="#pembayaran">Pembayaran</a><a href="#faq">FAQ</a></div>
+    <div><h4>CONTACT</h4><a href="https://wa.me/6285178418341" target="_blank">WhatsApp</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
   </div>
   <div class="footer-bottom"><span>© <span id="year"></span> Dappiwz Store</span><span>soft · calm · mysterious</span><span>All rights reserved.</span></div>
 </footer>
