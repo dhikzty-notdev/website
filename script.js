@@ -14,7 +14,7 @@ async function loadStoreData(){
     PRODUCTS.splice(0,PRODUCTS.length,...products);
     CATEGORIES.splice(0,CATEGORIES.length,...categories);
     SETTINGS=settings;
-    document.querySelectorAll("a[href*='wa.me/6285178418341']").forEach(a=>a.href=a.href.replace("6280000000000",SETTINGS.whatsapp));
+    document.querySelectorAll("a[href*='wa.me/6285178418341']").forEach(a=>a.href=a.href.replace("6285178418341",SETTINGS.whatsapp));
     renderProducts(); renderCart();
   }catch(e){console.error("Gagal memuat data toko:",e); toast("Data toko gagal dimuat");}
 }
@@ -77,7 +77,7 @@ $("#checkoutForm").onsubmit=e=>{
  const lines=cart.map(x=>{const p=PRODUCTS.find(y=>y.id===x.id);return `${p.name} x${x.qty}`}).join("%0A");
  const total=rupiah(cart.reduce((a,x)=>a+PRODUCTS.find(p=>p.id===x.id).price*x.qty,0));
  const msg=`Halo Dappiwz Store,%0ASaya ingin order *${order}*%0A%0A${lines}%0A%0ATotal: ${total}%0ANama: ${encodeURIComponent(fd.get("name"))}%0AWhatsApp: ${encodeURIComponent(fd.get("phone"))}%0AData: ${encodeURIComponent(fd.get("note"))}%0APayment: ${encodeURIComponent(fd.get("payment"))}`;
- window.open(`https://wa.me/6280000000000?text=${msg}`,"_blank");
+ window.open(`https://wa.me/6285178418341?text=${msg}`,"_blank");
  cart=[];saveCart();e.target.reset();closeModals();$("#cartDrawer").classList.remove("open");$("#overlay").classList.remove("show");toast("Pesanan dibuat. WhatsApp dibuka.");
 };
 $("#year").textContent=new Date().getFullYear();
