@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
 </head>
 <body>
   <header class="site-header">
@@ -121,13 +124,14 @@
     <section class="section claim-section" id="claim-garansi">
       <div class="claim-box">
         <div class="section-heading">
-          <h2>Tolong Isi Format Garansi Dibawah</h2>
+          <h2>FORMAT GARANSI DAPPIWZ</h2>
         </div>
         <form id="claimForm" class="claim-form">
           <label>Nama<input type="text" id="claimName" placeholder="Masukkan nama kamu" autocomplete="name" required></label>
-          <label>Produk yang dibeli<input type="text" id="claimProduct" placeholder="Masukkan produk yang dibeli" required></label>
-          <label>Tanggal order<input type="text" id="claimDate" placeholder="Contoh: 16 September 2026" required></label>
-          <div class="claim-note"><span>setelah mengirim format ini, owner akan read kemudian cek dan akan segera proses...</span></div>
+          <label>Produk Yang Dibeli<input type="text" id="claimProduct" placeholder="Masukkan produk yang dibeli" required></label>
+          <label>Tanggal Order<input type="text" id="claimDate" placeholder="Contoh: 16 September 2026" required></label>
+          <label>Kendala<textarea id="claimIssue" placeholder="Jelaskan kendala yang kamu alami" required></textarea></label>
+          <div class="claim-note"><strong>Catatan</strong><span>setelah mengirim format ini, owner akan read kemudian cek dan akan segera proses...</span></div>
           <button type="submit" class="claim-button">CLAIM SEKARANG</button>
         </form>
       </div>
