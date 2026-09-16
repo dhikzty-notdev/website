@@ -53,3 +53,6 @@ mobileNav?.querySelectorAll("a").forEach(link => {
     menuToggle?.setAttribute("aria-expanded", "false");
   });
 });
+
+const claimForm=document.getElementById("claimForm");
+claimForm?.addEventListener("submit",(event)=>{event.preventDefault();const name=document.getElementById("claimName").value.trim();const product=document.getElementById("claimProduct").value.trim();const date=document.getElementById("claimDate").value.trim();if(!name||!product||!date)return;const message=`Hai kak saya ingin claim garansi, ini format garansi saya :\n\nNama : ${name}\nProduk yang dibeli: ${product}\nTanggal order : ${date}\n\nMohon segera proses yaa kak, terima kasih...`;window.open(`https://wa.me/${OWNER}?text=${encodeURIComponent(message)}`,"_blank");});
