@@ -181,6 +181,13 @@ button { font: inherit; }
   margin: 0 0 13px;
   font-size: 16px;
 }
+.group-description {
+  margin: -22px 0 14px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
 .product-list { display: grid; gap: 8px; }
 .product {
   width: 100%;
