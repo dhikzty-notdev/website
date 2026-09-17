@@ -127,10 +127,12 @@
     </section>
   </main>
 
-    <section class="section claim-section" id="claim-garansi">
-      <div class="claim-box">
+    <section class="claim-section" id="claim-garansi" aria-hidden="true">
+      <div class="claim-overlay" data-claim-close></div>
+      <div class="claim-box" role="dialog" aria-modal="true" aria-labelledby="claimTitle">
+        <button type="button" class="claim-close" data-claim-close aria-label="Tutup format garansi">×</button>
         <div class="section-heading">
-          <h2>FORMAT GARANSI DAPPIWZ</h2>
+          <h2 id="claimTitle">FORMAT GARANSI DAPPIWZ</h2>
         </div>
         <form id="claimForm" class="claim-form">
           <label>Nama<input type="text" id="claimName" placeholder="Masukkan nama kamu" autocomplete="name" required></label>
